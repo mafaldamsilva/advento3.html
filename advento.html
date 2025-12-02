@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafios de Advento</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #3b0a45, #5d2677, #9b72cf);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      color: #f8f1ff;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 25px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #ffe5ff;
+      text-shadow: 0 0 12px rgba(255, 230, 255, 0.7);
+      margin-bottom: 20px;
+    }
+
+    p.description {
+      font-size: 17px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      color: #f7eaff;
+    }
+
+    .desafio {
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+
+    .desafio h2 {
+      color: #ffe0fa;
+      border-left: 4px solid #ffd3fa;
+      padding-left: 10px;
+      margin-top: 0;
+    }
+
+    .desafio p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #f7eaff;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 28px;
+      font-size: 18px;
+      color: #3f0b47;
+      background: #ffddf7;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      transition: 0.25s;
+    }
+
+    button:hover {
+      background: #ffeaff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>✨ Desafios de Advento ✨</h1>
+  <p class="description">
+    O desafio é criado pelo Movimento dos Convívios Fraternos.<br>
+    O primeiro desafio do conjunto recebido é até dia 25 de dezembro e o segundo é até dia 6 de janeiro.
+  </p>
+
+  <button id="gerar">Gerar Desafio</button>
+
+  <div id="desafio"></div>
+</div>
+
+<script>
+  const conjuntos = [
+    [
+      "Escolhe 5 minutos de cada dia para ficar em total silêncio; Não é necessário rezares muito, nem pensar em mil coisas que tens para fazer; Apenas respira, acalma-te e diz interiormente “Vem, Senhor”; Em cada dia, anota uma palavra que tenha surgido durante o teu silêncio (paz, paciência, esperança,…).",
+      "Escolhe uma pessoa concreta e oferece-lhe uma palavra que lhe dê vida, baseada numa palavra do teu silêncio; Pode ser uma carta, mensagem, chamada, conversa, entre outros; Leva a luz que recebeste ao coração de alguém que necessite com este gesto."
+    ],
+    [
+      "Durante o tempo de espera pelo nascimento de Jesus, escolhe um objeto por dia que não precisas (peça de roupa, livro, brinquedo, utensílio,…); Coloca-o numa caixa de “desapego”; No final, doa tudo a quem precisar (alguém próximo que conheças, alguma associação ou na tua paróquia).",
+      "Oferece algo que é realmente teu e não é algo físico (tempo, atenção, ajuda,…) a uma pessoa concreta e que não esperava; Não consiste em apenas “dar algo”, é dar de ti, assim como Jesus dá sem esperar algo em troca."
+    ],
+    [
+      "Escolhe uma mágoa ou uma situação difícil que tenhas passado; Escreve num papel tudo o que sentes e termina com a seguinte frase: “Eu escolho abrir espaço para a paz”; Não tens de conseguir perdoar se não estiveres preparado, mas abre espaço para que Jesus entre no teu coração.",
+      "Este desafio pode ser pequeno mas requer coragem; Envia uma mensagem, pede perdão, retoma o diálogo ou reza por alguém que sentes mágoa/tenhas perdido o contacto; Gesto pequeno mas concreto e corajoso. Isto é “Jesus nascer” dentro de ti."
+    ],
+    [
+      "Acende uma vela diariamente, ou, caso não consigas, fá-lo mentalmente; Cada vez que acendes, escolhe uma esperança para o dia; Aponta tudo num caderno: “A luz que espero”.",
+      "Faz um gesto luminoso para alguém que tem a chama apagada; Pode ser uma ação, uma mensagem, um elogio,…; Tu tornas-te a vela acesa na vida do outro."
+    ],
+    [
+      "Todos os dias, pergunta a ti próprio: “O que é verdadeiramente importante para mim?”; Escreve a resposta mais honesta que conseguires, sem filtros.",
+      "Pega na tua lista e escolhe um dos pontos; Transforma-o numa ação semanal durante um mês: aprende algo, deixa algum hábito, começa uma prática espiritual, ajuda alguém que precise."
+    ]
+  ];
+
+  function gerarDesafio() {
+    const idx = Math.floor(Math.random() * conjuntos.length);
+    const escolhido = conjuntos[idx];
+
+    document.getElementById("desafio").innerHTML = `
+      <div class="desafio">
+        <h2>Conjunto de Desafios</h2>
+        <p>• ${escolhido[0]}</p>
+        <p>• ${escolhido[1]}</p>
+      </div>
+    `;
+  }
+
+  document.getElementById("gerar").addEventListener("click", gerarDesafio);
+</script>
+
+</body>
+</html>
