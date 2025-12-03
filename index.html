@@ -90,13 +90,13 @@
 <body>
 
 <div class="container">
-  <h1>✨ Desafios de Advento ✨</h1>
+  <h1> Desafios de Advento 🕯️🌟</h1>
   <p class="description">
-    O desafio é criado pelo Movimento dos Convívios Fraternos de Setúbal.<br>
-    O primeiro desafio do conjunto recebido é até dia 25 de dezembro e o segundo é até dia 6 de janeiro.
+    O Movimento dos Convívios Fraternos de Setúbal convida-te a realizar 2 desafios durante este período do Advento. Cada desafio foi pensado com carinho e amor.<br>
+    O primeiro desafio do conjunto que irás receber é para ser realizado até dia 25 de dezembro e o segundo é entre o dia 25 e o dia 6 de janeiro.
   </p>
 
-  <button id="gerar">Gerar Desafio</button>
+  <button id="gerar">Descobre os teus desafios</button>
 
   <div id="desafio"></div>
 </div>
@@ -104,24 +104,24 @@
 <script>
   const conjuntos = [
     [
-      "Escolhe 5 minutos de cada dia para ficar em total silêncio; Não é necessário rezares muito, nem pensar em mil coisas que tens para fazer; Apenas respira, acalma-te e diz interiormente “Vem, Senhor”; Em cada dia, anota uma palavra que tenha surgido durante o teu silêncio (paz, paciência, esperança,…).",
-      "Escolhe uma pessoa concreta e oferece-lhe uma palavra que lhe dê vida, baseada numa palavra do teu silêncio; Pode ser uma carta, mensagem, chamada, conversa, entre outros; Leva a luz que recebeste ao coração de alguém que necessite com este gesto."
+      "Até ao dia 25/12: Escolhe 5 minutos de cada dia para ficar em total silêncio; Não é necessário rezares muito, nem pensar em mil coisas que tens para fazer; Apenas respira, acalma-te e diz interiormente “Vem, Senhor”; Em cada dia, anota uma palavra que tenha surgido durante o teu silêncio (paz, paciência, esperança,…).",
+      "A partir do dia 25/12 até 06/01: Escolhe uma pessoa concreta e oferece-lhe uma palavra que lhe dê vida, baseada numa palavra do teu silêncio; Pode ser uma carta, mensagem, chamada, conversa, entre outros; Leva a luz que recebeste ao coração de alguém que necessite com este gesto."
     ],
     [
-      "Durante o tempo de espera pelo nascimento de Jesus, escolhe um objeto por dia que não precisas (peça de roupa, livro, brinquedo, utensílio,…); Coloca-o numa caixa de “desapego”; No final, doa tudo a quem precisar (alguém próximo que conheças, alguma associação ou na tua paróquia).",
-      "Oferece algo que é realmente teu e não é algo físico (tempo, atenção, ajuda,…) a uma pessoa concreta e que não esperava; Não consiste em apenas “dar algo”, é dar de ti, assim como Jesus dá sem esperar algo em troca."
+      "Até ao dia 25/12: Durante o tempo de espera pelo nascimento de Jesus, escolhe um objeto por dia que não precisas (peça de roupa, livro, brinquedo, utensílio,…); Coloca-o numa caixa de “desapego”; No final, doa tudo a quem precisar (alguém próximo que conheças, alguma associação ou na tua paróquia).",
+      "A partir do dia 25/12 até 06/01: Oferece algo que é realmente teu e não é algo físico (tempo, atenção, ajuda,…) a uma pessoa concreta e que não esperava; Não consiste em apenas “dar algo”, é dar de ti, assim como Jesus dá sem esperar algo em troca."
     ],
     [
-      "Escolhe uma mágoa ou uma situação difícil que tenhas passado; Escreve num papel tudo o que sentes e termina com a seguinte frase: “Eu escolho abrir espaço para a paz”; Não tens de conseguir perdoar se não estiveres preparado, mas abre espaço para que Jesus entre no teu coração.",
-      "Este desafio pode ser pequeno mas requer coragem; Envia uma mensagem, pede perdão, retoma o diálogo ou reza por alguém que sentes mágoa/tenhas perdido o contacto; Gesto pequeno mas concreto e corajoso. Isto é “Jesus nascer” dentro de ti."
+      "Até ao dia 25/12: Escolhe uma mágoa ou uma situação difícil que tenhas passado; Escreve num papel tudo o que sentes e termina com a seguinte frase: “Eu escolho abrir espaço para a paz”; Não tens de conseguir perdoar se não estiveres preparado, mas abre espaço para que Jesus entre no teu coração.",
+      "A partir do dia 25/12 até 06/01: Este desafio pode ser pequeno mas requer coragem; Envia uma mensagem, pede perdão, retoma o diálogo ou reza por alguém que sentes mágoa/tenhas perdido o contacto; Gesto pequeno mas concreto e corajoso. Isto é “Jesus nascer” dentro de ti."
     ],
     [
-      "Acende uma vela diariamente, ou, caso não consigas, fá-lo mentalmente; Cada vez que acendes, escolhe uma esperança para o dia; Aponta tudo num caderno: “A luz que espero”.",
-      "Faz um gesto luminoso para alguém que tem a chama apagada; Pode ser uma ação, uma mensagem, um elogio,…; Tu tornas-te a vela acesa na vida do outro."
+      "Até ao dia 25/12: Acende uma vela diariamente, ou, caso não consigas, fá-lo mentalmente; Cada vez que acendes, escolhe uma esperança para o dia; Aponta tudo num caderno: “A luz que espero”.",
+      "A partir do dia 25/12 até 06/01: Faz um gesto luminoso para alguém que tem a chama apagada; Pode ser uma ação, uma mensagem, um elogio,…; Tu tornas-te a vela acesa na vida do outro."
     ],
     [
-      "Todos os dias, pergunta a ti próprio: “O que é verdadeiramente importante para mim?”; Escreve a resposta mais honesta que conseguires, sem filtros.",
-      "Pega na tua lista e escolhe um dos pontos; Transforma-o numa ação semanal durante um mês: aprende algo, deixa algum hábito, começa uma prática espiritual, ajuda alguém que precise."
+      "Até ao dia 25/12: Todos os dias, pergunta a ti próprio: “O que é verdadeiramente importante para mim?”; Escreve a resposta mais honesta que conseguires, sem filtros.",
+      "A partir do dia 25/12 até 06/01: Pega na tua lista e escolhe um dos pontos; Transforma-o numa ação semanal durante um mês: aprende algo, deixa algum hábito, começa uma prática espiritual, ajuda alguém que precise."
     ]
   ];
 
@@ -138,7 +138,6 @@
     `;
   }
 
-  document.getElementById("gerar").addEventListener("click", gerarDesafio);
 </script>
 
 </body>
